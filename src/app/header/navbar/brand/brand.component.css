@@ -1,0 +1,10 @@
+.brand-logo {
+    width: 5%;
+    height: auto;
+}
+a {
+    color:grey;
+}
+a:hover {
+    color:green;
+}
