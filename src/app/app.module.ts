@@ -12,6 +12,13 @@ import { SidebarComponent } from './content/sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './content/main/main.component';
 import { TopHeaderComponent } from './top-header/top-header.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +32,17 @@ import { TopHeaderComponent } from './top-header/top-header.component';
     MenuComponent,
     SearchComponent,
     MainComponent,
-    TopHeaderComponent
+    TopHeaderComponent,
+    HomeComponent,
+    AboutComponent,
+    ServicesComponent,
+    PortfolioComponent,
+    ContactComponent,
+    PageNotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
