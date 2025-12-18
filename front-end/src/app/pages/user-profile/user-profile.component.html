@@ -1,0 +1,23 @@
+<div class="profile-container">
+  <div class="user-info">
+    <p><strong>Name:</strong> {{ user?.name }}</p>
+    <p><strong>Email:</strong> {{ user?.email }}</p>
+    <p><strong>Phone:</strong> {{ user?.phone }}</p>
+    <p><strong>Member Since:</strong> {{ user?.joinedOn }}</p>
+  </div>
+
+  <div class="my-ads">
+    <p><strong>My Ads</strong></p>
+
+    <div *ngIf="myAds.length; else noAds">
+      <div class="ad-list">
+        <app-ad-card *ngFor="let ad of myAds" [ad]="ad"></app-ad-card>
+      </div>
+    </div>
+
+    <ng-template #noAds>
+      <p>You haven't posted any ads yet.</p>
+    </ng-template>
+    
+  </div>
+</div>

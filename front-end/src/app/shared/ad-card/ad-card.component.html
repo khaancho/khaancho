@@ -1,0 +1,13 @@
+<div class="ad-card" [routerLink]="['/ad-details', ad.id]">
+  <img [src]="ad.imageUrl || 'assets/images/default-ad.jpg'" alt="{{ ad.title }}" />
+
+  <div class="ad-content">
+    <p class="ad-title">{{ ad.title }}</p>
+    <p class="ad-description">{{ ad.description }}</p>
+    <p class="ad-user">Ads By: {{ ad.userId?.name || 'Unknown User'}}</p>
+    <p class="ad-date">{{ ad.createdAt | date: 'short' }}</p>
+    <p class="ad-category">Category: {{ ad.category }}</p>
+    <p class="ad-price">Rs. {{ ad.price }}</p>
+    <p class="ad-location">Location: {{ ad.location }}</p>
+  </div>
+</div>

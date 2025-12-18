@@ -1,0 +1,80 @@
+<div class="container mt-4">
+  <h2>Post a New Ad</h2>
+
+  <form [formGroup]="adForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input class="form-control" formControlName="title" />
+      <div *ngIf="isSubmitted && adForm.controls['title'].invalid" class="text-danger">
+        Title is required and should be less than 100 characters.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" formControlName="description"></textarea>
+      <div *ngIf="isSubmitted && adForm.controls['description'].invalid" class="text-danger">
+        Description must be at least 10 characters.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input class="form-control" formControlName="price" />
+      <div *ngIf="isSubmitted && adForm.controls['price'].invalid" class="text-danger">
+        Valid numeric price is required.
+      </div>
+    </div>
+
+<div class="mb-3">
+  <label class="form-label">Category</label>
+
+  <select class="form-control" formControlName="category" (change)="onCategoryChange($event)">
+    <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    <option value="__other__">Other...</option>
+  </select>
+
+  <div *ngIf="isCustomCategory" class="mt-2">
+    <input class="form-control"
+    placeholder="Enter custom category"
+    [value]="customCategory"
+    (input)="handleCustomCategoryInput($event)"
+    name="customCategory"
+    />
+
+  <ul *ngIf="filteredCategories.length" class="list-group position-absolute w-100 zindex-dropdown mt-1">
+    <li *ngFor="let cat of filteredCategories"
+        class="list-group-item list-group-item-action"
+        (click)="selectSuggestedCategory(cat)"
+        style="cursor: pointer;"
+        >
+      {{ cat }}
+    </li>
+  </ul>
+
+  </div>
+  
+  <div *ngIf="isSubmitted && adForm.controls['category'].invalid" class="text-danger">
+    Category is required.
+  </div>
+</div>
+
+    <div class="mb-3">
+      <label class="form-label">Location</label>
+      <input class="form-control" formControlName="location" />
+      <div *ngIf="isSubmitted && adForm.controls['location'].invalid" class="text-danger">
+        Location is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Image URL (optional)</label>
+      <input class="form-control" formControlName="imageUrl" />
+    </div>
+
+    <button class="btn btn-primary" type="submit">Post Ad</button>
+
+    <div class="text-success mt-3" *ngIf="successMessage">{{ successMessage }}</div>
+    <div class="text-danger mt-3" *ngIf="errorMessage">{{ errorMessage }}</div>
+  </form>
+</div>

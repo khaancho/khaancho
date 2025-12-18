@@ -1,0 +1,38 @@
+src/
+├── app/
+│   ├── app.component.ts             → Root Component (Bootstrap)
+│   ├── app.module.ts                → Root Module (imports layouts, routing, etc.)
+│   ├── layout/                      → App layouts
+│   │   ├── main-layout/
+│   │   │   └── main-layout.component.ts → Header + <router-outlet> + Footer
+│   │   └── auth-layout/
+│   │       └── auth-layout.component.ts → Login/Register layout
+│   ├── shared/                      → Reusable components
+│   │   ├── header/
+│   │   ├── footer/
+│   │   ├── search-bar/
+│   │   ├── ad-card/
+│   │   ├── modal/
+│   │   └── ...
+│   ├── pages/                       → Routed pages
+│   │   ├── home/
+│   │   ├── post-ad/
+│   │   ├── ad-details/
+│   │   ├── category/
+│   │   ├── user-profile/
+│   │   └── contact-us/
+│   ├── auth/                        → Auth-specific components
+│   │   ├── login/
+│   │   └── register/
+│   └── core/                        → Core services, models, guards
+│       ├── services/
+│       │   ├── ad.service.ts
+│       │   ├── auth.service.ts
+│       │   └── user.service.ts
+│       ├── models/
+│       │   ├── ad.model.ts
+│       │   └── user.model.ts
+│       ├── guards/
+│       │   └── auth.guard.ts
+│       └── interceptors/
+│           └── auth.interceptor.ts

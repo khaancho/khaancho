@@ -1,0 +1,10 @@
+<div class="ad-grid">
+  <app-ad-card
+    [title]="ad.title"
+    [price]="ad.price"
+    [location]="ad.location"
+    [imageUrl]="ad.imageUrl"
+    [ad]="ad"
+    *ngFor="let ad of ads"
+  ></app-ad-card>
+</div>

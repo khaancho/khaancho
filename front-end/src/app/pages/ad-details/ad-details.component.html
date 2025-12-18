@@ -1,0 +1,16 @@
+<div class="ad-details">
+  <img [src]="adData.imageUrl" alt="{{ adData.title }}" />
+
+  <div class="info">
+    <h1>{{ adData.title }}</h1>
+    <p class="price">Rs. {{ adData.price }}</p>
+    <p class="location">📍 {{ adData.location }}</p>
+    <p class="posted">Posted on: {{ adData.postedOn }}</p>
+
+    <h3>Description</h3>
+    <p>{{ adData.description }}</p>
+
+    <h3>Contact</h3>
+    <p>📞 {{ adData.contact }}</p>
+  </div>
+</div>

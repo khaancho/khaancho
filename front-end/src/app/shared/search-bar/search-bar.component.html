@@ -1,0 +1,14 @@
+<form class="d-flex input-group" (ngSubmit)="onSearch()">
+  <input
+    type="text"
+    [(ngModel)]="query"
+    name="search"
+    class="form-control"
+    placeholder="Search ads..."
+    aria-label="Search"
+  />
+  <button class="btn btn-outline-primary" type="submit">
+    <i class="bi bi-search"></i> Search
+  </button>
+</form>
+
